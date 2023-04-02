@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.NewNoteActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardCornerRadius="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp">
+
+            <EditText
+                android:id="@+id/edTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:inputType="textPersonName"
+                android:textSize="18sp"
+                android:hint="@string/title_hint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edDescription"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:hint="@string/description_hint"
+                android:inputType="textMultiLine"
+                android:textSize="16sp"
+                android:gravity="top"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/edTitle"
+                app:layout_constraintStart_toStartOf="@+id/edTitle"
+                app:layout_constraintTop_toBottomOf="@+id/edTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/colorPicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:elevation="10dp"
+        android:padding="3dp"
+        android:visibility="gone"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButtonRed"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/picker_red"
+                    android:layout_margin="2dp" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonGreen"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/picker_green"
+                    android:layout_margin="2dp"/>
+
+                <ImageButton
+                    android:id="@+id/imageButtonOrange"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/picker_orange"
+                    android:layout_margin="2dp"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <ImageButton
+                    android:id="@+id/imageButtonYellow"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/picker_yellow"
+                    android:layout_margin="2dp"/>
+
+                <ImageButton
+                    android:id="@+id/imageButtonBlue"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/picker_blue"
+                    android:layout_margin="2dp"/>
+
+                <ImageButton
+                    android:id="@+id/imageButtonBlack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@color/picker_black"
+                    android:layout_margin="2dp"/>
+            </TableRow>
+
+        </TableLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

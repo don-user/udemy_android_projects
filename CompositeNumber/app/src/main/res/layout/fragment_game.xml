@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragments.GameFragment">
+
+    <TextView
+        android:id="@+id/tViewTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timer"
+        android:textColor="@color/purple_700"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tViewSum"
+        android:layout_width="144dp"
+        android:layout_height="144dp"
+        style="@style/QuestionTextStyle"
+        android:text="1"
+        android:background="@drawable/circle_background"
+        app:layout_constraintBottom_toTopOf="@+id/tViewLeftNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"/>
+
+    <TextView
+        android:id="@+id/tViewLeftNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/QuestionTextStyle"
+        android:background="@color/teal_700"
+        android:text="7"
+        app:layout_constraintBottom_toTopOf="@id/tViewOption1"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/tViewQuestion"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tViewSum"/>
+
+    <TextView
+        android:id="@+id/tViewQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/QuestionTextStyle"
+        android:background="@color/teal_700"
+        android:text="@string/question_mark"
+        app:layout_constraintBottom_toBottomOf="@+id/tViewLeftNumber"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tViewLeftNumber"
+        app:layout_constraintTop_toTopOf="@id/tViewLeftNumber"/>
+
+    <TextView
+        android:id="@+id/tViewOption1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/OptionTextStyle"
+        android:background="@android:color/holo_green_light"
+        android:text="1"
+        app:layout_constraintEnd_toStartOf="@+id/tViewOption5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintBottom_toTopOf="@+id/tViewOption4" />
+
+    <TextView
+        android:id="@+id/tViewOption2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/OptionTextStyle"
+        android:background="@android:color/holo_orange_light"
+        android:text="2"
+        app:layout_constraintEnd_toStartOf="@id/tViewOption6"
+        app:layout_constraintStart_toEndOf="@+id/tViewOption4"
+        app:layout_constraintBottom_toTopOf="@+id/tViewOption4"/>
+
+    <TextView
+        android:id="@+id/tViewOption3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/OptionTextStyle"
+        android:background="@android:color/holo_purple"
+        android:text="3"
+        app:layout_constraintBottom_toTopOf="@id/tViewOption4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tViewOption5"/>
+
+    <TextView
+        android:id="@+id/tViewOption4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/OptionTextStyle"
+        android:background="@android:color/holo_blue_light"
+        android:text="4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tViewOption5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tViewOption5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/OptionTextStyle"
+        android:background="@android:color/holo_red_light"
+        android:text="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tViewOption6"
+        app:layout_constraintStart_toEndOf="@id/tViewOption4"/>
+
+    <TextView
+        android:id="@+id/tViewOption6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/OptionTextStyle"
+        android:background="@color/teal_200"
+        android:text="6"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tViewOption5"/>
+    
+    <TextView
+        android:id="@+id/tViewAnswerProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/answer_progress"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintTop_toBottomOf="@id/tViewLeftNumber"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"/>
+
+    
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:secondaryProgressTint="@android:color/background_dark"
+        app:layout_constraintBottom_toTopOf="@+id/tViewOption2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tViewAnswerProgress"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
